@@ -97,7 +97,8 @@ function checkRepeatClock() {
       if (res.data.status == 200) {
         let count = res.data.data.count;
         if (count == "0") {
-          console.log("检测重复打卡-今日首次打卡");
+          console.log("检测重复打卡");
+          console.log("今日首次打卡");
           getLocation();
         } else {
           console.log("检测重复打卡");
@@ -253,7 +254,7 @@ function sendNotification(text) {
         "Content-Type": "application/x-www-form-urlencoded"
       },
       data: {
-        msg: "自动健康打卡\n\n" + logs
+        msg: "<|||   自动健康打卡  |||>\n\n" + logs
       },
       transformRequest: [data => `msg=${data.msg}`]
     };
